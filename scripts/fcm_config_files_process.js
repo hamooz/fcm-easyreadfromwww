@@ -59,7 +59,7 @@ if (directoryExists("assets/www")) {
 
         var json = JSON.parse(contents);
         var strings = fs.readFileSync("platforms/android/res/values/strings.xml").toString();
-        process.stdout.write(strings);
+        process.stdout.write("testttt"+strings);
         // strip non-default value
         strings = strings.replace(new RegExp('<string name="google_app_id">([^\@<]+?)</string>', "i"), '')
 
@@ -76,7 +76,7 @@ if (directoryExists("assets/www")) {
         strings = strings.replace(new RegExp('<string name="google_api_key">([^<]+?)</string>', "i"), '<string name="google_api_key">' + json.client[0].api_key[0].current_key + '</string>')
 
         fs.writeFileSync("platforms/android/res/values/strings.xml", strings);
-        process.stdout.write(strings);
+        process.stdout.write("testttt"+strings);
       } catch(err) {
         process.stdout.write(err);
       }
