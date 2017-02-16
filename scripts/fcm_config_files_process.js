@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 'use strict';
-
+throw new Error("ttttttttt")
 var fs = require('fs');
 
 var getValue = function(config, name) {
@@ -54,7 +54,7 @@ if (directoryExists("assets/www")) {
 
     if (fileExists( path )) {
       try {
-        	throw new Error("cordova-plugin-fcm: You have installed platform android but file 'google-services.json' was not found in your Cordova project root folder.")
+        //	throw new Error("cordova-plugin-fcm: You have installed platform android but file 'google-services.json' was not found in your Cordova project root folder.")
         var contents = fs.readFileSync(path).toString();
         fs.writeFileSync("assets/www/google-services.json", contents);
 
